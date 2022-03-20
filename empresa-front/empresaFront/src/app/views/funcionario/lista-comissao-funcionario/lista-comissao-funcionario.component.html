@@ -1,0 +1,73 @@
+<div class="container container-box pt-5">
+  <div class="box-title my-2">
+    <h5 class="card-title mx-auto titulo mb-4">Comissão do Funcionário: {{nomeFuncionario}}</h5>
+    <button routerLink="/cadastro-comissao/{{id_funcionario}}" class="btn btn-success cadastrar">Cadastrar Comissão</button>
+    </div>
+    <div style="height: 300px; overflow: auto;">
+
+<table class="table table-stripped table-hover">
+  <thead>
+    <tr>
+
+      <th scope="col">Descrição</th>
+      <th scope="col">Data de Pagamento</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Status</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comissao of comissoes"  >
+
+      <td>{{comissao.co_descricao}}</td>
+      <td>{{comissao.co_dataPagamento | date : 'dd/MM/yyyy'}}</td>
+      <td>{{comissao.co_valor | currency: 'BRL'}}</td>
+      <td>{{comissao.co_status}}</td>
+      <td><button (click)="quitarComissao(comissao,comissao.id_comissao)" *ngIf="comissao.co_status == 'ANÁLISE' " class="btn btn-success cadastrar" ><i class="bi bi-plus-circle"></i></button></td>
+      <td><button (click)="cancelarComissao(comissao,comissao.id_comissao)" *ngIf="comissao.co_status == 'ANÁLISE' " class="btn btn-danger cadastrar"><i class="bi bi-x-circle"></i></button></td>
+
+          <td>
+
+              <div class="dropdown">
+                <button class="btn btn-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" routerLink="/edicao-comissao/{{comissao.id_comissao}}/{{id_funcionario}}" >Editar</a></li>
+
+                  <li><a class="dropdown-item"  (click)="open(modalExcluir)" >Excluir</a></li>
+
+
+                </ul>
+
+              </div>
+
+              <ng-template #modalExcluir let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="excluir">Exclusão de Cargo</h4>
+                  <button type="button" class="close fecharModal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Deseja realmente excluir a Comissão?  </p>
+                  <span>{{comissao.co_descricao}}</span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn-s" (click)="modal.close('Save click')">Cancelar</button>
+                  <button type="button" class="btn-e" (click)="excluirComissao(comissao.id_comissao);modal.close('Save click')">Excluir</button>
+
+                </div>
+              </ng-template>
+
+
+
+          </td>
+     </tr>
+
+  </tbody>
+</table>
+</div>
+
+  </div>
+

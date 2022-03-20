@@ -1,0 +1,57 @@
+.container-box{
+  height: 80%;
+  }
+
+  .card-title{
+  font-size: 28px;
+  font-weight: 600;
+
+  }
+
+
+  .card{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .card:hover{
+    cursor: pointer;
+  }
+
+  button{
+  background-color: #0B3575 !important ;
+  color: white;
+
+  }
+  button:hover{
+  color: white;
+
+  }
+
+  .fecharModal{
+    background-color: transparent !important;
+    color: black;
+    border: none;
+    outline: none;
+
+  }
+
+  .fecharModal:hover{
+    color: black;
+  }
+
+  .box-title{
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .fotoSupervisor{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+
+  }
+
+  .titulo{
+    color: #0B3575;
+  }

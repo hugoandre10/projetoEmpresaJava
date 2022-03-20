@@ -1,0 +1,56 @@
+<div class="container mt-2">
+  <div class="box-title my-2">
+    <h5 class="card-title mx-auto titulo mb-4">Funcionários</h5>
+
+  </div>
+  <div class="row mx-5">
+
+
+
+    <div *ngFor="let funcionario of funcionariosComCargo" class="card col-3 mx-4 mt-2 mb-4 p-2" style="width: 18rem;" >
+      <div class="card-body">
+        <h5 class="card-title">{{funcionario.func_nome}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{funcionario.func_cargo}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{funcionario.func_cidade}}</h6>
+        <p class="card-text">{{funcionario.car_nome}}</p>
+
+        <div class="dropdown text-end">
+          <button class="btn btn-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item"  routerLink="/editarFuncionario/{{funcionario.id_funcionario}}/{{funcionario.id_cargo}}">Editar</a></li>
+            <li><a class="dropdown-item" routerLink="/comissao/{{funcionario.id_funcionario}}">Comissão</a></li>
+            <li><a class="dropdown-item"  (click)="open(modalExcluir)" >Excluir</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <ng-template #modalExcluir let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="excluir">Exclusão de Cargo</h4>
+          <button type="button" class="close fecharModal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja realmente excluir o Funcionário?  </p>
+          <span>{{funcionario.func_nome}}</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-s" (click)="modal.close('Save click')">Cancelar</button>
+          <button type="button" class="btn-e" (click)="excluirFuncionario(funcionario.id_funcionario);modal.close('Save click')">Excluir</button>
+        </div>
+      </ng-template>
+    </div>
+
+
+
+
+
+
+</div>
+
+  </div>
+

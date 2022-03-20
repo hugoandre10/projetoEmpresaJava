@@ -1,0 +1,36 @@
+<div class="card container mb-5 mt-5 w-50 p-5">
+  <div class="box-title my-4">
+    <h5 class="card-title titulo">Edição de Cargo</h5>
+  </div>
+    <form>
+
+
+
+      <div class="mb-3 form-floating">
+        <input type="text" class="form-control"  [(ngModel)]="cargo.car_nome" id="floatingInput" placeholder="Coordenador"  name="tu_nome">
+        <label for="floatingInput">Nome do cargo</label>
+      </div>
+
+
+      <div class="mb-3 form-floating">
+        <input type="text" class="form-control"  [(ngModel)]="cargo.car_atribuicao" id="floatingInput" placeholder="Coordenador"  name="tu_descricao">
+        <label for="floatingInput">Atribuição do cargo</label>
+      </div>
+
+
+
+      <div class="mt-4 mb-5">
+      <button (click)="editarCargo()" class="btn btn-primary cadastrar ">Alterar</button>
+      <button routerLink="/listaCargo" class="btn btn-secondary cancel mx-3">Cancelar</button>
+
+
+    </div>
+    </form>
+
+  </div>
+
+
+
+
+
+

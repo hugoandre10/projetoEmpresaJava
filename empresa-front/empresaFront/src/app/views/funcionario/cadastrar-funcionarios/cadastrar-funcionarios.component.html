@@ -1,0 +1,32 @@
+<div class="card container mb-5 mt-5 w-50 p-5">
+  <div class="box-title my-4 ">
+    <h5 class="card-title titulo ">Cadastro de novos Funcionários</h5>
+  </div>
+    <form>
+
+
+      <div class="mb-3 form-floating">
+        <input type="text" class="form-control"  [(ngModel)]="funcionario.func_nome" id="floatingInput" placeholder="Coordenador"  name="func_nome">
+        <label for="floatingInput">Nome do funcionário</label>
+      </div>
+
+      <div class="mb-3 form-floating">
+        <input type="text" class="form-control"  [(ngModel)]="funcionario.func_cidade" id="floatingInput" placeholder="Coordenador"  name="func_cidade">
+        <label for="floatingInput">Cidade do funcionário</label>
+      </div>
+
+
+      <div class="mb-5 mt-5">
+      <button *ngIf="id_cargo != null" (click)="cadastrarFuncionario()" class="btn btn-primary cadastrar ">Cadastrar</button>
+      <button *ngIf="!id_cargo" (click)="cadastrarApenasFuncionario()" class="btn btn-primary cadastrar mx-3 ">Cadastrar</button>
+      <button routerLink="/listaCargo" class="btn btn-secondary cancel mx-3">Cancelar</button>
+    </div>
+    </form>
+
+  </div>
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<div class="card container mb-5 mt-5 w-50 p-5">
+  <div class="box-title my-2 mb-3">
+    <h5 class="card-title titulo">Editar Funcionário</h5>
+  </div>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do funcionário</label>
+        <input type="text" class="form-control" [(ngModel)]="funcionario.func_nome"  name="func_nome">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Cidade do funcionário</label>
+        <input type="text" class="form-control"   [(ngModel)]="funcionario.func_cidade" name="func_cidade">
+      </div>
+
+      <div class="mt-5 mb-4">
+      <button (click)="editarFuncionario()" class="btn btn-primary mx-2 mb-3  cadastrar">Editar</button>
+       <button routerLink="/atribuirCargo/{{funcionario.id_funcionario}}" class="btn btn-primary cadastrar mb-3 mx-2">Trocar de Cargo</button>
+      <button routerLink="/listaCargo" class="btn btn-secondary cancel mb-3 mx-3">Cancelar</button>
+    </div>
+    </form>
+
+  </div>
+
+
+
+
+
+

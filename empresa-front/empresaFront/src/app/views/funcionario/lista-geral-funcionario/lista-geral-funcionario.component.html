@@ -1,0 +1,30 @@
+<div class="container container-box pt-5">
+  <div class="box-title my-4">
+    <h5 class="card-title titulo">Funcionários Geral</h5>
+    <button routerLink="/cadastrarFuncionario" class="btn">Cadastrar Funcionário</button>
+
+  </div>
+  <div style="height: 300px; overflow: auto">
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Identificação</th>
+      <th scope="col">Nome do Funcionário</th>
+      <th scope="col">Cidade do Funcionário</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let funcionario of funcionarios">
+      <th scope="row">{{funcionario.id_funcionario}}</th>
+      <td>{{funcionario.func_nome}}</td>
+     <td>{{funcionario.func_cidade}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+  </div>
+

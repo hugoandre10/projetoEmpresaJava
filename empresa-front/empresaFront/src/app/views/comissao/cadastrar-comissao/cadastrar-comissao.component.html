@@ -1,0 +1,39 @@
+<div class="card container mb-5 mt-5 w-50 p-5">
+  <div class="box-title my-2">
+    <h5 class="card-title titulo">Cadastro de Comissão</h5>
+    </div>
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição da Comissão</label>
+        <input type="text" class="form-control" [(ngModel)]="comissao.co_descricao" name="co_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Data de Pagamento</label>
+        <input type="date" class="form-control" [(ngModel)]="comissao.co_dataPagamento"  name="co_dataPagamento">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valor</label>
+        <input type="text" currencyMask class="form-control" [(ngModel)]="comissao.co_valor" name="co_valor" [options]="{prefix: 'R$ ', thousands: '.', decimal: ',' , align: 'left'   }" >
+      </div>
+      <div class="mb-5">
+        <label class="form-label">Status</label>
+        <input type="text" readonly class="form-control" [(ngModel)]="comissao.co_status" value="ANÁLISE" name="co_status">
+      </div>
+      <div *ngIf="mensagem == true">
+        <p>Erro ao cadastrar comissão</p>
+
+      </div>
+      <div class="">
+      <button (click)="cadastrarComissao()"  class="btn btn-primary cadastrar   mt-2">Cadastrar</button>
+      <button  routerLink="/comissao/{{id_funcionario}}" class="btn btn-secondary cancel mx-3 mt-2">Cancelar</button>
+    </div>
+    </form>
+
+  </div>
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<div class="container  pt-5">
+  <div class="box-title my-4">
+    <h5 class="card-title mx-auto titulo">Supervisores e cargos que supervisiona</h5>
+    </div>
+
+
+    <div class="row mx-5">
+
+    <div *ngFor="let supervisor of supervisoresComCargo" class="card col-3 mx-4 mt-2 mb-4 p-2" style="width: 18rem;" >
+      <div class="card-body mx-auto text-center">
+        <img src="{{supervisor.sup_foto}}" class="fotoSupervisor my-3" >
+        <h5 class="">{{supervisor.sup_nome}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{supervisor.car_nome}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{supervisor.sup_cidade}}</h6>
+        <p class="card-text">{{supervisor.car_atribuicao}}</p>
+
+        <div class="dropdown text-end">
+          <button class="btn btn-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li> <i class="dropdown-item" *ngIf="supervisor.id_cargo != null"
+              routerLink="/supervisorDoCargo/{{ supervisor.id_cargo }}"
+
+              >Editar</i>
+              <i class="dropdown-item" *ngIf="supervisor.id_cargo == null"
+              routerLink="/editarSupervisor/{{supervisor.id_supervisor}}"
+
+              >Editar</i></li>
+
+            <li><a class="dropdown-item"  (click)="open(modalExcluir)" >Excluir</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <ng-template #modalExcluir let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="excluir">Exclusão de Cargo</h4>
+          <button type="button" class="close fecharModal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja realmente excluir o Supervisor?  </p>
+          <span>{{supervisor.sup_nome}}</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-s" (click)="modal.close('Save click')">Cancelar</button>
+          <button type="button" class="btn-e" (click)="excluirSupervisor(supervisor.id_supervisor);modal.close('Save click')">Excluir</button>
+        </div>
+      </ng-template>
+
+    </div>
+
+
+
+</div>
+
+  </div>
+

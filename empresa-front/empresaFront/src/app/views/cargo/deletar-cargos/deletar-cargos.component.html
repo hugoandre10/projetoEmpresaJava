@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Exclusão do Cargo</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Atribuição do cargo</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" readonly name="tu_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nome da turma</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" readonly name="tu_nome">
+      </div>
+      <button (click)="excluirCargo()"  class="btn btn-danger ">Excluir</button>
+      <button routerLink="/listaCargo" class="btn btn-secondary mx-3">Cancelar</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+

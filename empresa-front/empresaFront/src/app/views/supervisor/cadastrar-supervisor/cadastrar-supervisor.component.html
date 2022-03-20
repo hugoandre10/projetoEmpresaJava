@@ -1,0 +1,37 @@
+<div class="card container mb-5  w-50 pt-5">
+    <div class="box-title my-4">
+      <h5 class="card-title titulo">Cadastro de novos Supervisores</h5>
+    </div>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nome do supervisor</label>
+          <input type="text" class="form-control" [(ngModel)]="supervisor.sup_nome"  name="sup_nome">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Cidade do supervisor</label>
+          <input type="text" class="form-control"   [(ngModel)]="supervisor.sup_cidade" name="sup_cidade">
+        </div>
+
+        <div class="mb-5">
+          <label class="form-label">Foto do Supervisor</label>
+          <input type="file" class="form-control" [disabled]="supervisorCadastrado == false" (change)="subirFoto($event)"  name="sup_foto">
+        </div>
+        <div class="mb-2" *ngIf="mensagem == true">
+          <span>Foto anexada ao supervisor com sucesso</span>
+
+        </div>
+        <div class="mb-4">
+        <button (click)="cadastrarSupervisor()" class="btn btn-primary cadastrar ">Cadastrar</button>
+        <button routerLink="/listaSupervisor" class="btn btn-secondary cancel mx-3">Cancelar</button>
+      </div>
+      </form>
+
+
+
+    </div>
+
+
+
+
+
+

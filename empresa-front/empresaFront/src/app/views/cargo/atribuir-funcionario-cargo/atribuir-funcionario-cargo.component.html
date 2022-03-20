@@ -1,0 +1,63 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dados do Funcionario</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome do Funcionário</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_nome" name="func_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Cidade do Funcionário</label>
+              <input type="text"readonly class="form-control"  [(ngModel)]="funcionario.func_cidade" name="func_cidade">
+            </div>
+
+            <button  routerLink="/listaTodosFuncionario" class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+          <hr>
+
+        </div>
+      </div>
+    </div> -->
+    <div class="card container mb-5 mt-5 w-50 pt-5">
+      <div class="box-title my-2 mb-3">
+        <h5 class="card-title titulo text-center mx-3">Transferência de cargo  </h5>
+      </div>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label">Nome do Cargo</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="cargoEscolhido.car_nome" name="car_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Atribuição do Cargo</label>
+            <input type="text"readonly class="form-control"  [(ngModel)]="cargoEscolhido.car_atribuicao" name="car_atribuicao">
+          </div>
+
+          <h5 class="card-title titulo mt-5 "> Cargos disponíveis para transferência:</h5>
+
+
+          <select class="mt-3" [(ngModel)]="cargoEscolhido" name="cargoEscolhido" (ngModelChange)="mostrarCargo()" >
+            <option *ngFor="let cargo of cargos" [ngValue]="cargo">
+              {{cargo.car_nome}} - {{cargo.car_atribuicao}}
+            </option>
+          </select>
+          <div>
+          <button (click)="atribuirCargo()" class="btn btn-primary cadastrar mt-3 mb-3 mx-3">Salvar</button>
+          <button  routerLink="/listaTodosFuncionario" class="btn btn-secondary mt-3 mb-3 cancel mx-3">Cancelar</button>
+        </div>
+
+          <div class="mt-4 " >
+            <h5 class="card-title text-danger">Deixar funcionário sem cargo?
+              <button (click)="deixarFuncionarioSemCargo()" class="btn btn-danger demitir mx-3">Confirmar</button>
+            </h5>
+
+          </div>
+
+        </div>
+      </div>
+
+  <!-- </div>
+</div> -->

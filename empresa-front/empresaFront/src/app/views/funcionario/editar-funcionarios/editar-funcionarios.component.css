@@ -1,0 +1,54 @@
+.container-box{
+  height: 80%;
+  }
+
+  .card-title{
+  font-size: 28px;
+  font-weight: 600;
+
+  }
+
+  .titulo{
+    color: #0B3575;
+  }
+
+
+  button{
+  background-color: #0B3575 !important ;
+  color: white;
+
+  }
+  button:hover{
+  color: white;
+
+  }
+
+  .fecharModal{
+    background-color: transparent !important;
+    color: black;
+    border: none;
+    outline: none;
+
+  }
+
+  .fecharModal:hover{
+    color: black;
+  }
+
+  .box-title{
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .icones{
+    font-size: 20px;
+  }
+
+.cadastrar{
+  border: none;
+}
+
+  .cancel{
+    background-color: grey !important;
+    border: none;
+  }

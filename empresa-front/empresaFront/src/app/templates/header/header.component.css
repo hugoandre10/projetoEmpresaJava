@@ -1,0 +1,21 @@
+.logo{
+  font-size: 34px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: #0B3575;
+}
+
+.logo:hover{
+  color: #0B3575;
+}
+
+.container-link{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link{
+  color: #0B3575 !important;
+}

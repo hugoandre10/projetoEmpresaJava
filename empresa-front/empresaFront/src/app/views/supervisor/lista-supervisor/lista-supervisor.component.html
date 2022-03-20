@@ -1,0 +1,32 @@
+<div class="container container-box pt-5">
+  <div class="box-title my-4">
+    <h5 class="card-title titulo">Supervisores</h5>
+    <button routerLink="/cadastrarSupervisor" class="btn btn-success cadastrar">Cadastrar Supervisor</button>
+    </div>
+    <div style="height: 300px; overflow: auto;">
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Identificação</th>
+      <th scope="col">Nome do Supervisor</th>
+      <th scope="col">Cidade do Supervisor</th>
+      <th scope="col">Foto do Supervisor</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let supervisor of supervisores">
+      <th scope="row">{{supervisor.id_supervisor}}</th>
+      <td>{{supervisor.sup_nome}}</td>
+      <td>{{supervisor.sup_cidade}}</td>
+      <td>{{supervisor.sup_foto}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+  </div>
+

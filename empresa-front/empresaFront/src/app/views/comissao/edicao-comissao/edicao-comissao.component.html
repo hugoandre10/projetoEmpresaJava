@@ -1,0 +1,44 @@
+<div class="card container mb-5 mt-5 w-50 pt-5">
+  <div class="box-title my-2">
+    <h5 class="card-title titulo">Edição de Comissão</h5>
+  </div>
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição da Comissão</label>
+        <input type="text" class="form-control" [(ngModel)]="comissao.co_descricao" name="co_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Data de Pagamento</label>
+        <input type="date" class="form-control" [(ngModel)]="comissao.co_dataPagamento"  name="co_dataPagamento">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valor</label>
+        <input type="text" currencyMask class="form-control" [(ngModel)]="comissao.co_valor" name="co_valor" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ','}">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label status text-danger ">Status atual:</label>
+        <input type="text" readonly class="form-control" [(ngModel)]="comissao.co_status" name="co_status">
+      </div>
+
+      <div class="mb-3 mt-4">
+        <label class="form-label status text-danger mx-2">Mudar Status:</label>
+        <select name="co_status" [(ngModel)]="comissao.co_status" >
+          <option value="ANÁLISE">ANÁLISE</option>
+          <option value="PAGA">PAGA</option>
+          <option value="CANCELADA">CANCELADA</option>
+
+        </select>
+      </div>
+      <button (click)="editarComissao()"  class="btn btn-primary cadastrar mb-3 mt-3 ">Salvar</button>
+      <button (click)="voltar()"  class="btn btn-secondary cancel mx-3 mb-3 mt-3">Cancelar</button>
+    </form>
+
+  </div>
+
+
+
+
+
+
